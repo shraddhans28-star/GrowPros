@@ -2,6 +2,16 @@
 
 GrowPros is a student productivity prototype by ctrl+CREATE. It brings study goals, Pomodoro focus sessions, badges, shared streaks, a friends leaderboard, and Deshika, an optional AI study coach, into one app.
 
+## Team ctrl+CREATE
+
+- [Shraddha N S](https://github.com/shraddhans28-star)
+- [Gunashree V G](https://github.com/gunaweb47)
+- [Mahima PM](https://github.com/itsmahi24-pm)
+
+## Live demo
+
+Try GrowPros at [growpros.onrender.com](https://growpros.onrender.com). The free service may sleep after inactivity, and demo accounts or progress may reset after restarts. Use a test account and do not enter sensitive information.
+
 ## Run locally
 
 Requirements: Python 3.10 or newer.
