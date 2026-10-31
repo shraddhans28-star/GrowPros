@@ -32,10 +32,10 @@ Deshika uses OpenAI only when the server has an OPENAI_API_KEY environment varia
 
 See CONTRIBUTING.md for a simple branch-and-pull-request workflow for ctrl+CREATE.
 
-## Publish a stable public demo on Render
+## Publish a free public demo on Render
 
-This repository includes `render.yaml` for a public GrowPros web service. In Render, choose **New → Blueprint**, connect `shraddhans28-star/GrowPros`, and review the service and disk before applying it. Render assigns a stable `onrender.com` address that can be shared without a custom domain.
+This repository includes `render.yaml` for a public GrowPros web service. In Render, choose **New → Blueprint**, connect `shraddhans28-star/GrowPros`, and apply the free service. Render assigns a stable `onrender.com` address that can be shared without a custom domain.
 
-The Blueprint uses a paid always-on web service and a 1 GB persistent disk so the SQLite user database survives restarts and redeploys. Render currently lists the smallest web service at $7/month and persistent disks at $0.25/GB/month; usage, taxes, and pricing can change. Review the final estimate in Render before creating it. A free web service sleeps when idle and loses local files, so it is not configured here for ongoing user accounts.
+Free services sleep after 15 minutes without traffic and can take about a minute to wake up. Their filesystem is temporary, so SQLite accounts and progress can be lost when the service sleeps, restarts, or redeploys. This setup is for a public prototype/demo; use test accounts and do not enter sensitive information.
 
-Render creates a secret session key automatically. The optional `OPENAI_API_KEY` is not included in GitHub; add it in the Render service's Environment settings only if you want to enable Deshika's live AI responses. Without it, Deshika stays in demo mode.
+Render creates a secret session key automatically. The optional `OPENAI_API_KEY` is not included in GitHub; add it in the Render service's Environment settings only if you want to enable Deshika's live AI responses. Without it, Deshika stays in demo mode. OpenAI API usage is billed separately by OpenAI.
