@@ -1,0 +1,6 @@
+studysync_data.sqlite3
+studysync_data.json
+.growpros_session_secret
+.env
+__pycache__/
+*.py[cod]
