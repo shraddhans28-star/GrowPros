@@ -11,7 +11,10 @@ app.config.update(
     SESSION_COOKIE_SAMESITE="Lax",
     SESSION_COOKIE_SECURE=os.environ.get("GROWPROS_PUBLIC") == "1",
 )
-DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "studysync_data.sqlite3")
+DB = os.path.abspath(os.environ.get(
+    "GROWPROS_DB_PATH",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "studysync_data.sqlite3"),
+))
 LEGACY_DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "studysync_data.json")
 DEFAULT = {"commits": [{"t": "Read loops theory", "d": 1}, {"t": "Solve 10 examples", "d": 0}, {"t": "Push code to group repo", "d": 0}],
            "sessions": [], "badges": [],
@@ -38,6 +41,7 @@ def get_openai_api_key():
     return os.environ.get("OPENAI_API_KEY", "").strip()
 
 def connect_db():
+    os.makedirs(os.path.dirname(DB), exist_ok=True)
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
     return conn
